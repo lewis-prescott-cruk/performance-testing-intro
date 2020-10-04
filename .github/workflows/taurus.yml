@@ -12,6 +12,7 @@ jobs:
     - uses: actions/checkout@v2
       with:
         ref: main
-    - run: ls /
+    - run: cp jenkins.yml /tmp/jenkins.yml
+    - run: ls /tmp
     - run: |
         docker run -v /tmp:/bzt-configs -v /tmp/artifacts:/tmp/artifacts blazemeter/taurus jenkins.yml
