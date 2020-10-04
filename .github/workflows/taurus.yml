@@ -13,6 +13,9 @@ jobs:
       with:
         ref: main
     - run: cp jenkins.yml /tmp/jenkins.yml
+    - run: mkdir /tmp/scripts
+    - run: cp scripts/jenkins.jmx /tmp/scripts/jenkins.jmx
+    - run: cp junit.xml /tmp/junit.xml
     - run: ls /tmp
     - run: |
         docker run -v /tmp:/bzt-configs -v /tmp/artifacts:/tmp/artifacts blazemeter/taurus jenkins.yml
