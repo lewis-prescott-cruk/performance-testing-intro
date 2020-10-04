@@ -1,9 +1,12 @@
 name: CI
 
-on: [push]
+on: 
+  push:
+    branches:
+      - main
 
 jobs:
-  myjob:
+  taurus:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v2
@@ -11,4 +14,4 @@ jobs:
         ref: main
     - run: ls /
     - run: |
-    docker run -v /tmp:/bzt-configs -v /tmp/artifacts:/tmp/artifacts blazemeter/taurus jenkins.yml
+        docker run -v /tmp:/bzt-configs -v /tmp/artifacts:/tmp/artifacts blazemeter/taurus jenkins.yml
