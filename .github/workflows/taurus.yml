@@ -1,0 +1,14 @@
+name: CI
+
+on: [push]
+
+jobs:
+  myjob:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+      with:
+        ref: main
+    - run: ls /
+    - run: |
+    docker run -v /tmp:/bzt-configs -v /tmp/artifacts:/tmp/artifacts blazemeter/taurus jenkins.yml
