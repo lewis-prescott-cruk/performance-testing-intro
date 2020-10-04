@@ -1,0 +1,19 @@
+execution:
+- concurrency: 1
+  hold-for: 5s
+  ramp-up: 1s
+  scenario: Jenkins-API
+
+scenarios:
+  Jenkins-API:
+    script: scripts/jenkins.jmx
+
+reporting:
+- module: passfail
+  criteria:
+  - failures>50% for 1s, stop as failed
+- module: final-stats
+  dump-csv: stats.csv
+- module: junit-xml
+  filename: junit.xml
+  data-source: pass-fail

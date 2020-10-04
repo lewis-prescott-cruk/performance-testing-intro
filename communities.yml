@@ -1,0 +1,24 @@
+execution:
+- concurrency: 1
+  hold-for: 5s
+  ramp-up: 1s
+  scenario: Thread-Group
+
+scenarios:
+  get-requests:
+    follow-redirects: true
+  Thread-Group:
+    requests:
+    - label: communities
+      method: GET
+      url: https://uat.cancerresearchuk.org/about-cancer/cancer-chat/
+
+reporting:
+- module: passfail
+  criteria:
+  - failures>50% for 1s, stop as failed
+- module: final-stats
+  dump-csv: stats.csv
+- module: junit-xml
+  filename: junit.xml
+  data-source: pass-fail
