@@ -460,6 +460,7 @@
           <collectionProp name="DNSCacheManager.servers"/>
           <boolProp name="DNSCacheManager.clearEachIteration">false</boolProp>
           <boolProp name="DNSCacheManager.isCustomResolver">false</boolProp>
+          <collectionProp name="DNSCacheManager.hosts"/>
         </DNSCacheManager>
         <hashTree/>
         <CookieManager guiclass="CookiePanel" testclass="CookieManager" testname="HTTP Cookie Manager" enabled="true">
@@ -821,7 +822,7 @@
               </elementProp>
               <elementProp name="influxdbUrl" elementType="Argument">
                 <stringProp name="Argument.name">influxdbUrl</stringProp>
-                <stringProp name="Argument.value">http://127.0.0.1:8086/write?db=jmeter_demo</stringProp>
+                <stringProp name="Argument.value">http://localhost:8086/write?db=jmeter</stringProp>
                 <stringProp name="Argument.metadata">=</stringProp>
               </elementProp>
               <elementProp name="application" elementType="Argument">

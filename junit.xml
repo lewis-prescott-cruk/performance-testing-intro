@@ -1,8 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <testsuites>
   <testsuite name="bzt_pass_fail" package_name="bzt">
-    <testcase classname="bzt--9223371952583904540" name="failures of &gt;50% for 1s">
-      <error message="Failed: failures&gt;50% for 7 sec" type="pass/fail criteria triggered"/>
-    </testcase>
+    <testcase classname="bzt--9223371913352939632" name="failures of &gt;50% for 1s"/>
   </testsuite>
 </testsuites>
